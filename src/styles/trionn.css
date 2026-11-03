@@ -1,0 +1,563 @@
+/* ========================================================
+   CYBERNETIC DESIGN SYSTEM (V2 CYBER PRO)
+   Aesthetic: Dark luxury & crisp light mode, electric lime,
+   glassmorphism, bold grotesque typography, and fluid micro-interactions.
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+
+:root {
+  --tr-bg: #070709;
+  --tr-bg-elevated: #0d0d12;
+  --tr-card: rgba(16, 16, 23, 0.72);
+  --tr-card-hover: rgba(24, 24, 35, 0.88);
+  --tr-border: rgba(255, 255, 255, 0.08);
+  --tr-border-highlight: rgba(204, 255, 0, 0.4);
+  --tr-border-cyan: rgba(0, 240, 255, 0.4);
+  
+  /* Signature Accents */
+  --tr-neon: #ccff00;
+  --tr-neon-glow: rgba(204, 255, 0, 0.28);
+  --tr-neon-soft: rgba(204, 255, 0, 0.12);
+  --tr-cyan: #00f0ff;
+  --tr-cyan-glow: rgba(0, 240, 255, 0.25);
+  --tr-purple: #a855f7;
+  --tr-purple-glow: rgba(168, 85, 247, 0.25);
+
+  /* Typography Colors */
+  --tr-text-primary: #f8fafc;
+  --tr-text-secondary: #94a3b8;
+  --tr-text-muted: #64748b;
+  --tr-text-dark: #070709;
+
+  /* Surfaces & Bars */
+  --tr-status-bar-bg: rgba(0, 0, 0, 0.35);
+  --tr-input-bg: rgba(0, 0, 0, 0.35);
+  --tr-footer-bg: rgba(7, 7, 10, 0.92);
+  --tr-grid-color: rgba(255, 255, 255, 0.02);
+
+  /* Fonts */
+  --tr-font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --tr-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --tr-font-mono: 'JetBrains Mono', monospace;
+
+  --tr-radius-sm: 8px;
+  --tr-radius-md: 14px;
+  --tr-radius-lg: 20px;
+  --tr-radius-full: 9999px;
+  --tr-transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================================
+   LIGHT MODE PERFECTION OVERRIDES
+   ======================================================== */
+[data-v2-theme="light"] {
+  --tr-bg: #f5f7fa;
+  --tr-bg-elevated: #ffffff;
+  --tr-card: rgba(255, 255, 255, 0.92);
+  --tr-card-hover: #ffffff;
+  --tr-border: rgba(15, 23, 42, 0.1);
+  --tr-border-highlight: rgba(101, 163, 13, 0.6);
+  --tr-border-cyan: rgba(2, 132, 199, 0.5);
+  
+  --tr-neon: #65a30d;
+  --tr-neon-glow: rgba(101, 163, 13, 0.22);
+  --tr-neon-soft: rgba(101, 163, 13, 0.12);
+  --tr-cyan: #0284c7;
+  --tr-cyan-glow: rgba(2, 132, 199, 0.2);
+  --tr-purple: #7c3aed;
+  --tr-purple-glow: rgba(124, 58, 237, 0.2);
+
+  --tr-text-primary: #0f172a;
+  --tr-text-secondary: #475569;
+  --tr-text-muted: #94a3b8;
+  --tr-text-dark: #0f172a;
+
+  --tr-status-bar-bg: rgba(15, 23, 42, 0.04);
+  --tr-input-bg: rgba(15, 23, 42, 0.04);
+  --tr-footer-bg: rgba(255, 255, 255, 0.94);
+  --tr-grid-color: rgba(15, 23, 42, 0.035);
+}
+
+/* Base Body when in V2 Mode */
+.trionn-root {
+  background-color: var(--tr-bg);
+  color: var(--tr-text-primary);
+  font-family: var(--tr-font-sans);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.trionn-root ::selection {
+  background: var(--tr-neon);
+  color: #000;
+}
+
+/* Ambient Glow Orbs */
+.trionn-ambient-glow {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.18;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+[data-v2-theme="light"] .trionn-ambient-glow {
+  opacity: 0.12;
+}
+
+.glow-orb-1 {
+  width: 550px;
+  height: 550px;
+  top: -100px;
+  left: 10%;
+  background: radial-gradient(circle, var(--tr-neon) 0%, transparent 70%);
+}
+
+.glow-orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: 5%;
+  right: -50px;
+  background: radial-gradient(circle, var(--tr-purple) 0%, transparent 70%);
+  animation-duration: 24s;
+}
+
+.glow-orb-3 {
+  width: 450px;
+  height: 450px;
+  top: 45%;
+  left: -100px;
+  background: radial-gradient(circle, var(--tr-cyan) 0%, transparent 70%);
+  animation-duration: 20s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-40px) scale(1.08); }
+  100% { transform: translateY(30px) scale(0.96); }
+}
+
+/* Subtle Grid Background Pattern */
+.trionn-grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--tr-grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--tr-grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Noise overlay */
+.trionn-noise {
+  position: fixed;
+  inset: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Glass Card */
+.trionn-card {
+  background: var(--tr-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--tr-border);
+  border-radius: var(--tr-radius-lg);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+  transition: var(--tr-transition);
+  position: relative;
+  z-index: 2;
+}
+
+[data-v2-theme="light"] .trionn-card {
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+.trionn-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-v2-theme="light"] .trionn-card:hover {
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+.trionn-card-glow:hover {
+  border-color: var(--tr-border-highlight);
+  box-shadow: 0 10px 30px -10px var(--tr-neon-glow);
+}
+
+/* Typography styles */
+.trionn-font-display {
+  font-family: var(--tr-font-display);
+  letter-spacing: -0.02em;
+}
+
+.trionn-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--tr-radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--tr-neon-soft);
+  color: var(--tr-neon);
+  border: 1px solid var(--tr-border-highlight);
+  box-shadow: 0 0 15px var(--tr-neon-soft);
+}
+
+.trionn-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--tr-neon);
+  box-shadow: 0 0 8px var(--tr-neon);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* High-impact Buttons */
+.trionn-btn-primary {
+  background: var(--tr-neon);
+  color: #000;
+  font-family: var(--tr-font-sans);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: -0.01em;
+  padding: 10px 22px;
+  border-radius: var(--tr-radius-full);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--tr-transition);
+  box-shadow: 0 0 25px var(--tr-neon-glow);
+}
+
+[data-v2-theme="light"] .trionn-btn-primary {
+  color: #fff;
+}
+
+.trionn-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px var(--tr-neon);
+  filter: brightness(1.08);
+}
+
+.trionn-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.trionn-btn-primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.trionn-btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--tr-text-primary);
+  border: 1px solid var(--tr-border);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 9px 18px;
+  border-radius: var(--tr-radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--tr-transition);
+}
+
+[data-v2-theme="light"] .trionn-btn-ghost {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+.trionn-btn-ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--tr-text-primary);
+  transform: translateY(-1px);
+}
+
+[data-v2-theme="light"] .trionn-btn-ghost:hover:not(:disabled) {
+  background: rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.25);
+}
+
+.trionn-btn-ghost:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Transformation Action Button in Bento Grid */
+.trionn-action-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--tr-border);
+  border-radius: var(--tr-radius-md);
+  padding: 14px 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  cursor: pointer;
+  transition: var(--tr-transition);
+  color: var(--tr-text-primary);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-v2-theme="light"] .trionn-action-btn {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.trionn-action-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tr-neon), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.trionn-action-btn:hover:not(:disabled)::after {
+  transform: translateX(100%);
+}
+
+.trionn-action-btn:hover:not(:disabled) {
+  background: var(--tr-neon-soft);
+  border-color: var(--tr-border-highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -8px var(--tr-neon-glow);
+}
+
+.trionn-action-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.trionn-action-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.trionn-action-title {
+  font-family: var(--tr-font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: var(--tr-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trionn-action-desc {
+  font-size: 0.76rem;
+  color: var(--tr-text-secondary);
+  line-height: 1.35;
+}
+
+/* Floating Version Switcher Bar */
+.trionn-version-switcher {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(12, 12, 17, 0.88);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(204, 255, 0, 0.15);
+  border-radius: var(--tr-radius-full);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--tr-transition);
+}
+
+[data-v2-theme="light"] .trionn-version-switcher {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15), 0 0 20px rgba(101, 163, 13, 0.15);
+}
+
+.trionn-version-pill {
+  padding: 8px 18px;
+  border-radius: var(--tr-radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--tr-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--tr-transition);
+}
+
+.trionn-version-pill.active {
+  background: var(--tr-neon);
+  color: #000;
+  box-shadow: 0 0 20px var(--tr-neon-glow);
+}
+
+[data-v2-theme="light"] .trionn-version-pill.active {
+  color: #fff;
+}
+
+.trionn-version-pill:hover:not(.active) {
+  color: var(--tr-text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-v2-theme="light"] .trionn-version-pill:hover:not(.active) {
+  color: #0f172a;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+/* Modern Textarea Styling */
+.trionn-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--tr-text-primary);
+  font-family: var(--tr-font-sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  resize: vertical;
+  min-height: 240px;
+  padding: 20px;
+}
+
+.trionn-textarea::placeholder {
+  color: var(--tr-text-muted);
+  font-weight: 400;
+}
+
+.trionn-textarea.is-mono {
+  font-family: var(--tr-font-mono);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--tr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+[data-v2-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tr-neon);
+}
+
+/* Stat Bento Item */
+.trionn-stat-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--tr-border);
+  border-radius: var(--tr-radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: var(--tr-transition);
+}
+
+[data-v2-theme="light"] .trionn-stat-item {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.trionn-stat-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+[data-v2-theme="light"] .trionn-stat-item:hover {
+  background: #ffffff;
+  border-color: var(--tr-border-highlight);
+  box-shadow: 0 8px 24px rgba(101, 163, 13, 0.12);
+}
+
+.trionn-stat-value {
+  font-family: var(--tr-font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--tr-text-primary); /* FIXED: Now follows theme text-primary, perfectly crisp black in light mode! */
+}
+
+.trionn-stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tr-text-secondary);
+  font-weight: 600;
+}
+
+/* Footer Class */
+.trionn-footer {
+  border-top: 1px solid var(--tr-border);
+  background-color: var(--tr-footer-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2.5rem 1.5rem 6.5rem 1.5rem; /* Generous bottom spacing so version switcher doesn't overlap text */
+  position: relative;
+  z-index: 2;
+  transition: var(--tr-transition);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .trionn-version-switcher {
+    bottom: 16px;
+    width: 90%;
+    justify-content: center;
+  }
+  
+  .trionn-stat-value {
+    font-size: 1.3rem;
+  }
+}

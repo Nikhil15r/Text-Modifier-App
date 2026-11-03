@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Text Modifier 2.0 // Cybernetic Typography Studio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A high-performance text manipulation and typography studio. Featuring dual-engine version switching, real-time linguistic telemetry, AI voice synthesis, and 25+ precision transformations.
 
-## Available Scripts
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel)](https://nk-text-modifier.vercel.app/)
+[![React 18](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ⚡ What's New in 2.0 (Cyber Pro)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Dual-Version Switcher:** Seamlessly toggle between **V2 Cyber Pro** and **V1 Classic (Original 2023 Bootstrap)** from anywhere in the app with zero page reload.
+* **Cyber-Luxury Aesthetic:** Obsidian surfaces (`#070709`), electric neon lime accents (`#ccff00`), glowing glassmorphism cards (`backdrop-filter: blur(20px)`), and custom cursor follower halos.
+* **Editorial Typography:** Styled with Google's **Syne**, **Plus Jakarta Sans**, and **JetBrains Mono**.
+* **AI Sample Generation:** Synthesize realistic text samples across product strategy, dirty logs, developer configs, and creative narratives with simulated neural generation.
+* **25+ Text Transformation Engines:** Categorized into Case Studio, Clean & Sanitize, Developer Encoders, and Creative & Fun.
+* **Real-time Linguistic Telemetry (HUD Bento Grid):** Live word count, characters (with & without spaces), sentence count, paragraph count, estimated reading time, estimated speaking time, and Flesch reading ease estimation.
+* **AI Voice Synthesizer:** Browser-native Web Speech API reader with Play, Pause, and Voice selection.
+* **Regex Find & Replace:** In-app search drawer with case matching and live match counters.
+* **Undo / Redo Stack:** Multi-step history stack so you never lose your edits.
+* **One-Click Export:** Copy with celebratory confetti, download as `.txt`, `.md`, or structured `.json`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🔀 Version Switcher Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Feature | V1 Classic (2023) | V2 Cyber Pro (2026) |
+|---|---|---|
+| **Aesthetic** | Bootstrap 5 clean layout | Cyber-luxury dark glass |
+| **Theme System** | Body style mutator | CSS Variables + Cyber Dark / High Contrast Light |
+| **Tool Count** | 7 basic converters | 25+ Precision tools |
+| **Developer Encoders** | None | Base64, URL, Slugify, ROT13, Binary |
+| **Linguistic Telemetry** | Word & Character count | 8-metric Bento HUD with Readability index |
+| **AI Sample Generation** | None | Multi-domain neural prompt synthesizer |
+| **Voice Playback** | None | Web Speech API audio synthesizer |
+| **Undo / Redo** | None | Multi-level history buffer |
+| **Search & Replace** | None | Dynamic Find & Replace with Regex |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Complete Transformation Arsenal
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Case Studio
+* **UPPERCASE:** All characters converted to uppercase.
+* **lowercase:** All characters converted to lowercase.
+* **Title Case:** Capitalizes major words while respecting stop words (`a`, `the`, `in`, `to`, etc.).
+* **Capitalized Case:** Capitalizes the first letter of each word.
+* **Sentence case:** Capitalizes only the first letter of sentences.
+* **camelCase:** Standard variable formatting (`myVariableName`).
+* **PascalCase:** Class and React component formatting (`MyComponent`).
+* **kebab-case:** Hyphen-delimited URLs and CSS styles (`my-slug-name`).
+* **snake_case:** Underscore-delimited Python styles (`my_variable_name`).
+* **CONSTANT_CASE:** Uppercase config tokens (`DATABASE_URL`).
+* **dot.case:** Period-delimited namespace formats (`app.config.path`).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Clean & Sanitize
+* **Remove Extra Spaces:** Strips repeated whitespace and tabs.
+* **Strip Blank Lines:** Removes unnecessary blank paragraphs.
+* **Trim Line Ends:** Cleans leading and trailing whitespace from every line.
+* **Deduplicate Lines:** Eliminates repeated lines automatically.
+* **Strip HTML Tags:** Cleans HTML/XML tags from pasted web text.
+* **Sort Lines A → Z:** Ascending alphabetical sort.
+* **Sort Lines Z → A:** Descending alphabetical sort.
+* **Add Line Numbers:** Prefixes each row with `1. `, `2. `, etc.
 
-### `npm run eject`
+### 3. Developer & Encoders
+* **Slugify (SEO):** Transforms sentences into clean, URL-safe slugs.
+* **Base64 Encode & Decode:** ASCII Base64 encryption/decryption.
+* **URL Encode & Decode:** URI percent-encoding for query params.
+* **Binary 0101:** Converts text into 8-bit binary representation.
+* **ROT13 Cipher:** Classic Caesar 13-character substitution.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. Creative & Fun
+* **Reverse Characters:** Reverses entire string order.
+* **Invert Case:** Toggles uppercase to lowercase and vice versa.
+* **LeetSpeak (1337):** Replaces characters with numbers.
+* **Upside Down (uʍop):** Flips typography vertically.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 💻 Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* **Frontend:** React 18
+* **Routing:** React Router v6
+* **Icons:** Lucide React
+* **Micro-interactions:** Canvas Confetti
+* **Typography:** Syne, Plus Jakarta Sans, JetBrains Mono
+* **Styling:** Modular CSS Variables, Glassmorphism, CSS Grid / Flexbox
+* **Hosting:** Vercel
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Getting Started Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# 1. Clone the repository
+git clone https://github.com/Nikhil15r/Text-Modifier-App.git
+cd Text-Modifier-App
 
-### Code Splitting
+# 2. Install dependencies
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# 3. Start development server
+npm start
+```
 
-### Analyzing the Bundle Size
+Visit `http://localhost:3000` to explore the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 👨‍💻 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Developer:** [Nikhil](https://github.com/Nikhil15r)
